@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Comic Sans MS\, Comic Sans, cursive;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.menu {
+  height: 100%;
+  opacity: 0;
+  justify-content: space-around;
+  align-items: center;
+  transition-property: opacity, transform;
+  transition-duration: 1s;
+  transition-delay: .5s, 1.5s;
+  display: flex;
+  transform: translateY(120%);
+}
+
+.menu.active {
+  height: 100%;
+  opacity: 1;
+  justify-content: space-around;
+  align-items: center;
+  display: flex;
+  transform: translateY(0);
+}
+
+.heroes {
+  display: flex;
+}
+
+.hero {
+  border: 5px solid #605f5f;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 50px;
+  padding: 10px;
+  display: flex;
+}
+
+.hero:hover {
+  border: 5px solid #097203;
+  transform: scale(1.2);
+}
+
+.hero__avatar {
+  width: 250px;
+  display: block;
+}
+
+.hero__parametrs {
+  justify-content: center;
+  display: flex;
+}
+
+.hero__list > li {
+  list-style-type: none;
+}
+
+.hero__item_static, .hero__item_dinamic {
+  text-align: center;
+  margin: 0 12px;
+  display: block;
+}
+
+.hero__item_dinamic {
+  text-transform: uppercase;
+  color: #00f;
+}
+
+.map {
+  height: 100%;
+  opacity: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition-property: opacity, transform;
+  transition-duration: 1s, 0s;
+  transition-delay: 1.5s, 0s;
+  display: flex;
+  transform: translateY(120%);
+}
+
+.map.active {
+  height: 100%;
+  opacity: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transform: translateY(-100%);
+}
+
+.map__row {
+  flex-direction: row;
+  display: flex;
+}
+
+.map__tile {
+  width: 100px;
+  height: 100px;
+  background: #22b14c;
+  outline: 1px solid #000;
+  margin: 2px;
+}
+
+.map__tile.forest {
+  background: url("forest.c8491831.png") 0 0 / contain no-repeat;
+}
+
+.map__tile.boss {
+  background: url("boss.2be0f358.png") 0 0 / contain no-repeat;
+}
+
+.map__tile.hero-tile {
+  background: #9b8a0f;
+}
+
+.player {
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s linear;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.player__avatar {
+  width: 60px;
+  z-index: 3;
+  display: block;
+}
+
+.arena {
+  border: 1px solid #000;
+}
+
+.arena.active {
+  height: 100%;
+  opacity: 1;
+  background: url("grass.bf6cecef.png");
+  border: 1px solid #000;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transform: translateY(-200%);
+}
+
+.base {
+  width: 200px;
+  height: 200px;
+  background-color: #c19259;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.enemy {
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+/*# sourceMappingURL=index.2cdaf7bc.css.map */

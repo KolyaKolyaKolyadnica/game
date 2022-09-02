@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS, Comic Sans", cursive;
+}
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Menu */
+
+.menu {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  opacity: 0;
+  transform: translateY(120%);
+  transition-duration: 1s;
+  transition-property: opacity, transform;
+  transition-delay: 0.5s, 1.5s;
+}
+.menu.active {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  opacity: 1;
+  transform: translateY(0);
+}
+.heroes {
+  display: flex;
+}
+
+.hero {
+  border: 5px solid rgb(96, 95, 95);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  margin: 0 50px;
+  padding: 10px;
+}
+.hero:hover {
+  border: 5px solid rgb(9, 114, 3);
+  transform: scale(120%);
+}
+
+.hero__avatar {
+  display: block;
+  width: 250px;
+}
+
+.hero__parametrs {
+  display: flex;
+  justify-content: center;
+}
+.hero__list > li {
+  list-style-type: none;
+}
+.hero__item_static,
+.hero__item_dinamic {
+  display: block;
+  margin: 0 12px;
+  text-align: center;
+}
+.hero__item_static {
+}
+.hero__item_dinamic {
+  text-transform: uppercase;
+  color: blue;
+}
+
+/* Map */
+.map {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  opacity: 0;
+  transform: translateY(120%);
+  transition-duration: 1s, 0s;
+  transition-property: opacity, transform;
+  transition-delay: 1.5s, 0s;
+}
+.map.active {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 1;
+  transform: translateY(-100%);
+}
+.map__row {
+  display: flex;
+  flex-direction: row;
+}
+
+.map__tile {
+  outline: 1px solid #000;
+  width: 100px;
+  height: 100px;
+  background: rgb(34, 177, 76);
+  margin: 2px;
+}
+.map__tile.forest {
+  background: url("./img/forest.png") 0 0 / contain no-repeat;
+}
+.map__tile.boss {
+  background: url("./img/boss.png") 0 0 / contain no-repeat;
+}
+.map__tile.hero-tile {
+  background: rgb(155, 138, 15);
+}
+
+.player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+  transition: 1s linear;
+}
+.player.hidden {
+  display: none;
+}
+.player__avatar {
+  display: block;
+  width: 60px;
+  z-index: 3;
+}
+/* Arena */
+.arena {
+  border: 1px solid #000;
+}
+.arena.active {
+  border: 1px solid #000;
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("./img/grass.png");
+
+  opacity: 1;
+  transform: translateY(-200%);
+}
+.base {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgb(193, 146, 89);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.enemy {
+  /* position: absolute; */
+  /* top: 40%;
+  left: 20%; */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(255, 0, 0);
+}
+/* Game Over */
+.game-over {
+  position: absolute;
+  top: 12.5%;
+  left: 12.5%;
+  width: 75%;
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  color: azure;
+  font-size: 30px;
+  background-color: rgb(61, 26, 26);
+  border: 15px solid #000;
+  box-shadow: 30px 15px 80px rgb(68, 56, 56), -30px 15px 80px rgb(68, 56, 56),
+    15px 30px 80px rgb(68, 56, 56), 15px -30px 80px rgb(68, 56, 56);
+}
+.game-over.hidden {
+  display: none;
+}
